@@ -29,7 +29,7 @@
                     </tbody>
                 </table>
                 <hr>
-                <button style="display: inline-block;" class="btn btn-default" id="confirmDish" value="">Add dish</button>
+                <a style="display: inline-block;" class="btn btn-default" ng-controller="DinnerCtrl" ng-click="addDish(dish.id)" id="confirmDish" value="">Add dish</a>
                 <div style="display: inline-block;">SEK <span id="ttlCost"></span>{{ttlCost}}</div>
             </div>
         </div>
