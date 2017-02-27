@@ -4,9 +4,11 @@
 // service is created first time it is needed and then just reuse it
 // the next time.
 dinnerPlannerApp.factory('Dinner', function($resource) {
-    var numberOfGuest = 2;
+
+    var numberOfGuest = 2; //should be 0 later
     var selectedDishes = [];
     var selectedDishesFull = [];
+
     this.setNumberOfGuests = function(num) {
         numberOfGuest = num;
     }
@@ -14,10 +16,7 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         return numberOfGuest;
     }
 
-
-
     //getAllDishes
-
     //example call: Dinner.DishSearch.get({query:'hummus',type:'appetizer'})
     this.DishSearch = $resource('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search', {}, {
         get: {
@@ -59,7 +58,7 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         var ingredientsList = [];
         selectedDishesFull.forEach(dish => {
             ingredientsList = ingredientsList.concat(dish.extendedIngredients);
-        })
+        });
         return ingredientsList;
     }
 
@@ -76,42 +75,41 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
     }
 
     this.addDishToMenu = function(id) {
-            console.log("Enter addDishToMenu")
-            var index = selectedDishes.indexOf(parseInt(id, 10));
-            if (index != -1) {
-                return 0;
-            }
-         this.Dish.get({id:id},function(data){
-             console.log("Enter Sucsses")
-                selectedDishes.push(id);
-                console.log(data);
-                selectedDishesFull.push(data);
-                //return data;
-            },function(data){
-                console.log("Error");
-            });
-
+        console.log("Enter addDishToMenu")
+        var index = selectedDishes.indexOf(parseInt(id, 10));
+        if (index != -1) {
+            return 0;
         }
+        this.Dish.get({id:id},function(data){
+        console.log("Enter Sucsses")
+            selectedDishes.push(id);
+            console.log(data);
+            selectedDishesFull.push(data);
+            //return data;
+        },function(data){
+            console.log("Error");
+        });
+    }
         //Removes dish from menu
     this.removeDishFromMenu = function(id) {
-            var index = selectedDishes.indexOf(id);
-            if (index == -1) {
-                return; //is not in list
-            }
-            var fullIndex = selectedDishesFull.map(function(element) {
-                return element.id;
-            }).indexOf(id);
-            selectedDishes.splice(index, 1);
-            selectedDishesFull.splice(fullIndex, 1);
-            return;
+        var index = selectedDishes.indexOf(id);
+        if (index == -1) {
+            return; //is not in list
         }
+        var fullIndex = selectedDishesFull.map(function(element) {
+            return element.id;
+        }).indexOf(id);
+        selectedDishes.splice(index, 1);
+        selectedDishesFull.splice(fullIndex, 1);
+        return;
+    }
         //we know it is added, so we just return it from selectedDishesFull
     this.getSelDish = function(id) {
-            var fullIndex = selectedDishesFull.map(function(element) {
-                return element.id;
-            }).indexOf(id);
-            return selectedDishesFull[fullIndex];
-        }
+        var fullIndex = selectedDishesFull.map(function(element) {
+            return element.id;
+        }).indexOf(id);
+        return selectedDishesFull[fullIndex];
+    }
         //Cost for one portion of a dish
     this.oneDishCost = function(dish) {
         var sum = 0;
@@ -121,10 +119,11 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         sum = Math.round(sum * 100) / 100;
         return sum;
     }
+
     this.dishCost = function(dish) {
-            var sum = this.oneDishCost(dish);
-            return sum * numberOfGuest;
-        }
+        var sum = this.oneDishCost(dish);
+        return sum * numberOfGuest;
+    }
 
         // Angular service needs to return an object that has all the
         // methods created in it. You can consider that this is instead
