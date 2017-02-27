@@ -6,7 +6,7 @@
             <div id="imageblock" class="col-xs-6 col-sm-4 col-md-4">
                 <h3 id={{dish.name}}></h3>
                 <img src="{{dish.image}}"/ style="max-width:100%;" id="dishImage">
-                <button id="goToSelect" class="btn btn-default">Go back</button>
+                <a id="goToSelect" ng-href="#!/search" class="btn btn-default">Go back</a>
             </div>
             <div id="ingredientList" class="col-xs-6 col-sm-4 col-md-4">
                 <h4>Ingredients for 1 person</h4>
@@ -36,6 +36,7 @@
         <div id="preparation" class="col-xs-6 col-sm-8 col-md-9 pull-right" style="min-height: 40vh;">
             <h4>Preparation</h4>
             <p id="dishDescription"></p>
+            {{dish.instructions}}
         </div>
     </div>
 </div>
