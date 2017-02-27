@@ -14,7 +14,10 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         return numberOfGuest;
     }
 
+
+
     //getAllDishes
+
     //example call: Dinner.DishSearch.get({query:'hummus',type:'appetizer'})
     this.DishSearch = $resource('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search', {}, {
         get: {
@@ -33,9 +36,19 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
             }
         }
     });
+
+    this.Joke = $resource('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random', {}, {
+        get: {
+            headers:{
+                'X-Mashape-Key': 'Qu9grxVNWpmshA4Kl9pTwyiJxVGUp1lKzrZjsnghQMkFkfA4LB'
+
+            }
+        }
+    });
+
     // TODO in Lab 5: Add your model code from previous labs
     // feel free to remove above example code
-    // you will need to modify the model (getDish and getAllDishes) 
+    // you will need to modify the model (getDish and getAllDishes)
     // a bit to take the advantage of Angular resource service
     // check lab 5 instructions for details
     //Returns all the dishes on the menu.
@@ -49,6 +62,29 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         })
         return ingredientsList;
     }
+
+    this.getDish() = function(dishId){
+        return Dish({id: dishId});
+    }
+
+    this.getDishes() = function(){
+        return DishSearch({number:15});
+    }
+    this.getAllDishes = function (dishType,filter) {
+        if(!filter && dishType == "filter"){
+            return DishSearch({number:15});
+        } else if (!filter){
+            var input = {
+                return DishSearch({number:15, type: dishType});
+            };
+        }
+        if(filter&& type == "filter"){
+            return DishSearch({number:15, query: filter});
+        } else if (filter) {
+            return DishSearch({number: 15, query: filter, type:dishType});
+    }
+
+
     this.getTotalMenuPrice = function() {
         if (numberOfGuest == 0 || selectedDishesFull.length == 0) {
             return 0;
