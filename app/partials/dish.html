@@ -1,5 +1,44 @@
 <!-- We include the sidebar as it is shared across two screens. -->
 <ng-include src="'partials/dinner-sidebar.html'" ng-controller="DinnerCtrl"></ng-include>
+<div id="dish">
+    <div class="row">
+        <div class="row" style="min-height: 40vh;">
+            <div id="imageblock" class="col-xs-6 col-sm-4 col-md-4">
+                <h3 id={{dish.name}}></h3>
+                <img src="{{dish.image}}"/ style="max-width:100%;" id="dishImage">
+                <button id="goToSelect" class="btn btn-default">Go back</button>
+            </div>
+            <div id="ingredientList" class="col-xs-6 col-sm-4 col-md-4">
+                <h4>Ingredients for 1 person</h4>
+                <hr>
+                <table class="table">
+                    <thead>
+                            <th>Amount</th>
+                            <th>Unit</th>
+                            <th>Ingredient</th>
+                            <th>Cost</th>
 
-<!-- TODO in Lab 5: Display the dish information including image, Description, 
+                    </thead>
+                    <tbody id="tableBodyIngredients" ng-repeat="ingredient in dish.extendedIngredients">
+                        <tr>
+                            <td>{{ingredient.amount}}</td>
+                            <td>{{ingredient.unit}}</td>
+                            <td>{{ingredient.name}}</td>
+                            <td><span>SEK </span>{{ingredient.amount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <button style="display: inline-block;" class="btn btn-default" id="confirmDish" value="">Add dish</button>
+                <div style="display: inline-block;">SEK <span id="ttlCost"></span>{{ttlCost}}</div>
+            </div>
+        </div>
+        <div id="preparation" class="col-xs-6 col-sm-8 col-md-9 pull-right" style="min-height: 40vh;">
+            <h4>Preparation</h4>
+            <p id="dishDescription"></p>
+        </div>
+    </div>
+</div>
+
+<!-- TODO in Lab 5: Display the dish information including image, Description,
 Instructions, Ingredients and total cost. -->
