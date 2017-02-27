@@ -4,6 +4,10 @@ dinnerPlannerApp.controller('DinnerCtrl', function ($scope,Dinner) {
 
 	$scope.numberOfGuests = Dinner.getNumberOfGuests();
 
+    $scope.addDish = function(id) {
+        Dinner.addDishToMenu(id);
+    }
+
 	$scope.setNumberOfGuest = function(number){
     	Dinner.setNumberOfGuests(number);
 	}
