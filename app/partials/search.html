@@ -27,8 +27,7 @@ not support it in free version) and list all the dishes that match the search. -
         {{status}}
     </form>
 
-    <div id="listDishes">
-        <li ng-repeat= "dish in dishes">
+    <div id="listDishes" ng-repeat= "dish in dishes">
             <div class="thumbnail">
                     <img src="https://spoonacular.com/recipeImages/{{dish.image}}"/  class="center-block img-responsive">
                     <div class="caption">
@@ -39,7 +38,6 @@ not support it in free version) and list all the dishes that match the search. -
                         </p>
                     </div>
                 </div>
-        </li>
 
     </div>
 </div>
