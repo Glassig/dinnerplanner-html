@@ -63,26 +63,7 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         return ingredientsList;
     }
 
-    this.getDish() = function(dishId){
-        return Dish({id: dishId});
-    }
 
-    this.getDishes() = function(){
-        return DishSearch({number:15});
-    }
-    this.getAllDishes = function (dishType,filter) {
-        if(!filter && dishType == "filter"){
-            return DishSearch({number:15});
-        } else if (!filter){
-            var input = {
-                return DishSearch({number:15, type: dishType});
-            };
-        }
-        if(filter&& type == "filter"){
-            return DishSearch({number:15, query: filter});
-        } else if (filter) {
-            return DishSearch({number: 15, query: filter, type:dishType});
-    }
 
 
     this.getTotalMenuPrice = function() {
@@ -141,14 +122,7 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
             var sum = this.oneDishCost(dish);
             return sum * numberOfGuest;
         }
-    //do we really need this here? can't main do this instead, not really for the model to do
-    this.getFoodJoke = $resource('https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/jokes/random', {}, {
-        get: {
-            headers: {
-                'X-Mashape-Key': 'Qu9grxVNWpmshA4Kl9pTwyiJxVGUp1lKzrZjsnghQMkFkfA4LB'
-            }
-        }
-    });
+
         // Angular service needs to return an object that has all the
         // methods created in it. You can consider that this is instead
         // of calling var model = new DinnerModel() we did in the previous labs
