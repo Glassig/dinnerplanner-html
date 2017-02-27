@@ -1,6 +1,11 @@
 // Search controller that we use whenever we have a search inputs
 // and search results
 dinnerPlannerApp.controller('SearchCtrl', function ($scope,Dinner) {
+
+    $scope.add = function(id) {
+        Dinner.addDishToMenu(id);
+    }
+
     $scope.search = function(query,type) {
       $scope.status = "Searching...";
       Dinner.DishSearch.get({query:query,type:type},function(data){

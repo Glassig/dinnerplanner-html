@@ -35,7 +35,7 @@ not support it in free version) and list all the dishes that match the search. -
                         <h3> {{dish.title}}</h3>
                         <p>
                             <a role="button" ng-href="#!/dish/{{dish.id}}" class="btn btn-primary" id="seeDetails{{dish.id}}">See more</a>
-                            <a role="button" class="btn btn-default" id="addMenu{dish.id}}">Add to menu</a>
+                            <a role="button" class="btn btn-default"ng-click="add(dish.id)" id="addMenu{{dish.id}}">Add to menu</a>
                         </p>
                     </div>
                 </div>

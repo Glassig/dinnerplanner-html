@@ -76,16 +76,21 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
     }
 
     this.addDishToMenu = function(id) {
+            console.log("Enter addDishToMenu")
             var index = selectedDishes.indexOf(parseInt(id, 10));
             if (index != -1) {
                 return 0;
             }
-            var promise = this.getDish(id);
-            return promise.done(dish => {
+         this.Dish.get({id:id},function(data){
+             console.log("Enter Sucsses")
                 selectedDishes.push(id);
-                selectedDishesFull.push(dish);
-                return dish;
+                console.log(data);
+                selectedDishesFull.push(data);
+                //return data;
+            },function(data){
+                console.log("Error");
             });
+
         }
         //Removes dish from menu
     this.removeDishFromMenu = function(id) {
