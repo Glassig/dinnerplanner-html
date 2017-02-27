@@ -10,7 +10,6 @@
 // into developing Angular applications. For this lab, these two will suffice.
 var dinnerPlannerApp = angular.module('dinnerPlanner', ['ngRoute','ngResource']);
 
-
 // Here we configure our application module and more specifically our $routeProvider. 
 // Route provider is used to tell angular to load a specific partial (view) for an individual
 // specific address that is provided in the browser. This enables us to change the browser address

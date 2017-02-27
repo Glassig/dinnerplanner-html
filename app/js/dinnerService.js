@@ -63,9 +63,6 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         return ingredientsList;
     }
 
-
-
-
     this.getTotalMenuPrice = function() {
         if (numberOfGuest == 0 || selectedDishesFull.length == 0) {
             return 0;
@@ -77,6 +74,7 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         });
         return sum;
     }
+
     this.addDishToMenu = function(id) {
             var index = selectedDishes.indexOf(parseInt(id, 10));
             if (index != -1) {
