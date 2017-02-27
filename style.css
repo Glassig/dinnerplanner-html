@@ -1,0 +1,157 @@
+/*
+html body .container-fluid{
+	min-height:100%;
+	height:100%;
+	font-family: sans-serif;
+}
+*/
+/*JUMBOTRON DIV
+#small_title {
+	display: inline-block;
+}
+
+#jumbo_title {
+	margin-top: 0;
+	display: inline-block;
+}
+
+.jumbotron {
+	background-color: brown;
+	padding-bottom:1px;
+	margin-bottom: 0;
+	height: 20vh;
+}
+
+.loading {
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black url("./images/default.svg") center center no-repeat;
+    opacity: .5;
+    z-index: 1000;
+}
+*/
+/*FRONTPAGE
+#frontpage {
+	background-image: url("./images/bg2.jpg");
+	background-size: cover;
+	height: 80vh;
+}
+
+#frontpageTextBox{
+	margin-top:20vh;
+}
+
+hr.style-one {drink
+	border: 0;
+	height: 1px;
+	background: #333;
+	background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+	background-image: -moz-linear-gradient(left, #ccc, #333, #ccc);
+	background-image: -ms-linear-gradient(left, #ccc, #333, #ccc);
+	background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
+	margin: 1em 1em;
+}
+
+#seeInstructions{
+	size: 3em;
+	background-color: orange;
+}
+
+#createDinner{
+	background-color: orange;
+	display: block;
+	margin: 0 auto;
+}
+
+.bg-info{
+	border-style: solid;
+	padding: 1em;
+}
+#topbar{
+	background-color: #FFC145;
+	border-style: solid;
+}
+#editDinner{
+	margin-left: 60%;
+	vertical-align: middle;
+	display: inline-block;
+
+}
+ #instructionNrGuest{
+	 vertical-align: middle;
+	display: inline-block;
+}*/
+/*SIDEBAR CSS
+#fixedSidebar {
+    left: 0;
+    border-right-style: solid;
+    height: 100vh;
+}
+#fixedSidebar h4 {
+	margin-top:0;
+	padding-top:10px;
+}
+#fixedSidebar.affix {
+    position: fixed !important;
+    height: 100vh;
+    top: 0;
+}
+
+#confirmDinner{
+    color: black;
+    background-color: orange;
+    border-style:hidden;
+}
+
+#instructionNrGuest{
+	margin-left: 10%;
+}
+
+#sideBarPrice {
+	text-align: right;
+	margin-right: 1.4em;
+	margin-bottom: 1em;
+}
+
+#sideBarPrice #price, #sideBarPrice #totalCost {
+	display: inline-block;
+}*/
+
+/* SELECTDISHES
+.instructionPic{
+	padding: 5%;
+}
+.thumbnail {
+	width: 252px;
+	margin: 10px;
+	display: inline-block;
+}
+.thumbnail img {
+	max-height: 200px; 
+	width:242px;
+}
+
+*/
+/* DISH
+
+#imageblock img {
+	width: 300px;
+}
+*/
+/* OVERVIEW
+#ocost{
+	margin-left:1em;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+}
+.vertical-line {
+	border-left: 1px solid black;
+}*/
