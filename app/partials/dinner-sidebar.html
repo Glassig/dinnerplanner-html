@@ -15,9 +15,12 @@ this with Total price of the menu -->
 				</tr>
 			</thead>
 			<tbody id="tableBody">
-				<tr>
-					<td>Pending</td>
-					<td>0.00</td>
+				<tr ng-repeat="dish in dishList track by $index">
+					<td>{{dish.title}}</td>
+					<td>{{dishCost(dish)}}</td>
+					<td>	
+						<button type="button" ng-click="removeDishFromMenu(dish.id)" class="btn btn-danger btn-xs">X</button>
+					</td>
 				</tr>
 			</tbody>
 		</table>
