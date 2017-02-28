@@ -13,11 +13,10 @@
                 <hr>
                 <table class="table">
                     <thead>
-                            <th>Amount</th>
-                            <th>Unit</th>
-                            <th>Ingredient</th>
-                            <th>Cost</th>
-
+                        <th>Amount</th>
+                        <th>Unit</th>
+                        <th>Ingredient</th>
+                        <th>Cost</th>
                     </thead>
                     <tbody id="tableBodyIngredients" ng-repeat="ingredient in dish.extendedIngredients">
                         <tr>
@@ -35,8 +34,9 @@
         </div>
         <div id="preparation" class="col-xs-6 col-sm-8 col-md-9 pull-right" style="min-height: 40vh;">
             <h4>Preparation</h4>
-            <p id="dishDescription"></p>
-            {{dish.instructions}}
+            <p id="dishDescription">
+                {{dish.instructions}}
+            </p>
         </div>
     </div>
 </div>
