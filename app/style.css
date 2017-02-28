@@ -5,20 +5,29 @@ html body .container-fluid{
 	font-family: sans-serif;
 }
 */
+
+
+
+
 /*JUMBOTRON DIV
 #small_title {
 	display: inline-block;
 }
+
 #jumbo_title {
 	margin-top: 0;
 	display: inline-block;
 }
+
+
 .jumbotron {
 	background-color: brown;
 	padding-bottom:1px;
 	margin-bottom: 0;
 	height: 20vh;
 }
+
+
 .loading {
 	position: fixed;
     width: 100%;
@@ -27,16 +36,22 @@ html body .container-fluid{
     opacity: .5;
     z-index: 1000;
 }
-*/
-/*FRONTPAGE
+
+
+FRONTPAGE
+
 #frontpage {
 	background-image: url("./images/bg2.jpg");
 	background-size: cover;
 	height: 80vh;
 }
+
+
 #frontpageTextBox{
 	margin-top:20vh;
 }
+
+
 hr.style-one {drink
 	border: 0;
 	height: 1px;
@@ -47,15 +62,18 @@ hr.style-one {drink
 	background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
 	margin: 1em 1em;
 }
+
 #seeInstructions{
 	size: 3em;
 	background-color: orange;
 }
+
 #createDinner{
 	background-color: orange;
 	display: block;
 	margin: 0 auto;
 }
+
 .bg-info{
 	border-style: solid;
 	padding: 1em;
@@ -68,6 +86,7 @@ hr.style-one {drink
 	margin-left: 60%;
 	vertical-align: middle;
 	display: inline-block;
+
 }
  #instructionNrGuest{
 	 vertical-align: middle;
@@ -88,14 +107,17 @@ hr.style-one {drink
     height: 100vh;
     top: 0;
 }
+
 #confirmDinner{
     color: black;
     background-color: orange;
     border-style:hidden;
 }
+
 #instructionNrGuest{
 	margin-left: 10%;
 }
+
 #sideBarPrice {
 	text-align: right;
 	margin-right: 1.4em;
@@ -105,7 +127,9 @@ hr.style-one {drink
 	display: inline-block;
 }*/
 
+
 /* SELECTDISHES
+
 .instructionPic{
 	padding: 5%;
 }
@@ -115,11 +139,15 @@ hr.style-one {drink
 	display: inline-block;
 }
 .thumbnail img {
-	max-height: 200px; 
+
+	max-height: 200px;
 	width:242px;
 }
+
+
 */
 /* DISH
+
 #imageblock img {
 	width: 300px;
 }
@@ -128,6 +156,7 @@ hr.style-one {drink
 #ocost{
 	margin-left:1em;
 }
+
 .row-centered {
     text-align:center;
 }
@@ -138,4 +167,5 @@ hr.style-one {drink
 }
 .vertical-line {
 	border-left: 1px solid black;
+
 }*/
