@@ -8,8 +8,9 @@
 // also see that we included separate JavaScript files for these modules. Angular
 // has other core modules that you might want to use and explore when you go deeper
 // into developing Angular applications. For this lab, these two will suffice.
-var dinnerPlannerApp = angular.module('dinnerPlanner', ['ngRoute','ngResource']);
+var dinnerPlannerApp = angular.module('dinnerPlanner', ['ngRoute','ngResource','angular-loading-bar']);
 
+//angular.module('dinnerPlanner', ['angular-loading-bar']);
 // Here we configure our application module and more specifically our $routeProvider.
 // Route provider is used to tell angular to load a specific partial (view) for an individual
 // specific address that is provided in the browser. This enables us to change the browser address
