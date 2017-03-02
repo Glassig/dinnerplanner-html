@@ -19,13 +19,10 @@ html body .container-fluid{
 	display: inline-block;
 }
 
-
+*/
 .jumbotron {
-	background-color: brown;
-	padding-bottom:1px;
 	margin-bottom: 0;
-	height: 20vh;
-}
+}/*
 
 FRONTPAGE
 
@@ -66,7 +63,7 @@ hr.style-one {drink
 .bg-info{
 	border-style: solid;
 	padding: 1em;
-}
+} */
 #topbar{
 	background-color: #FFC145;
 	border-style: solid;
@@ -80,7 +77,7 @@ hr.style-one {drink
  #instructionNrGuest{
 	 vertical-align: middle;
 	display: inline-block;
-}*/
+}/*
 /*SIDEBAR CSS
 #fixedSidebar {
     left: 0;
