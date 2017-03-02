@@ -128,7 +128,7 @@ hr.style-one {drink
 }*/
 
 
-/* SELECTDISHES
+
 
 .instructionPic{
 	padding: 5%;
@@ -145,14 +145,13 @@ hr.style-one {drink
 }
 
 
-*/
-/* DISH
+
+
 
 #imageblock img {
 	width: 300px;
 }
-*/
-/* OVERVIEW
+
 #ocost{
 	margin-left:1em;
 }
@@ -168,4 +167,4 @@ hr.style-one {drink
 .vertical-line {
 	border-left: 1px solid black;
 
-}*/
+}
