@@ -10,7 +10,7 @@ dinnerPlannerApp.controller('DishCtrl', function ($scope,$routeParams,Dinner) {
             console.log(data);
             $scope.dish = data;
             $scope.ttlCost = Dinner.oneDishCost($scope.dish);
-            $scope.status = "Done!"
+            $scope.status = "";
         },function(data){
             $scope.status = "Error!"
         });

@@ -147,13 +147,13 @@ dinnerPlannerApp.factory('Dinner', function($resource,$cookieStore) {
     }
 
     var numberOfGuest = $cookieStore.get("guests");
-    console.log(numberOfGuest); //should be 0 later
+    //console.log(numberOfGuest); //should be 0 later
     var selectedDishes = $cookieStore.get("dishIds");
-    console.log(selectedDishes);
+    //console.log(selectedDishes);
     var selectedDishesFull = []
-        console.log(selectedDishesFull);
+        //console.log(selectedDishesFull);
     this.createFullMenu();
-        console.log(selectedDishesFull);
+        //console.log(selectedDishesFull);
 
         // Angular service needs to return an object that has all the
         // methods created in it. You can consider that this is instead
