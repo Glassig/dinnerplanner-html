@@ -127,8 +127,13 @@ hr.style-one {drink
 	display: inline-block;
 }*/
 
+#overviewTable {
+	display: inline-block;
+}
 
-
+#listDishes {
+	display: inline-block;
+}
 
 .instructionPic{
 	padding: 5%;
