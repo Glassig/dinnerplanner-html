@@ -1,1 +1,14 @@
-<h6>Tjo</h6>
+<div id="instructions" ng-controller="DinnerCtrl">
+    <div class="row">
+        <div id="instructionTable" ng-repeat="dish in dishList">
+            <div class="row">
+                <div class="col-md-6">
+                    <img ng-src="{{dish.image}}" class="img-responsive instructionPic"/>
+                </div>
+                <div class="col-md-6">
+                    <p>{{dish.instructions}}</p>
+                </div>
+            <div>
+        </div>
+    </div>
+</div>

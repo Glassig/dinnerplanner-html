@@ -115,6 +115,9 @@ hr.style-one {drink
 #sideBarPrice #price, #sideBarPrice #totalCost {
 	display: inline-block;
 }*/
+#dishList{
+	display: inline-block;
+}
 
 #overviewTable {
 	display: inline-block;

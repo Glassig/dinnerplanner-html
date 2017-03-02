@@ -3,13 +3,20 @@
 // dependency on any service you need. Angular will insure that the
 // service is created first time it is needed and then just reuse it
 // the next time.
-dinnerPlannerApp.factory('Dinner', function($resource) {
+dinnerPlannerApp.factory('Dinner', function($resource,$cookieStore) {
+    if(typeof($cookieStore.get("guests")) == 'undefined'){
+            console.log("HEJ");
+        $cookieStore.put("guests",0);
+    }
+    if(typeof($cookieStore.get("dishIds")) == 'undefined'){
+        console.log("HEJ");
+        $cookieStore.put("dishIds",[]);
+    }
 
-    var numberOfGuest = 2; //should be 0 later
-    var selectedDishes = [];
-    var selectedDishesFull = [];
+
 
     this.setNumberOfGuests = function(num) {
+        $cookieStore.put("guests",num);
         numberOfGuest = num;
     }
     this.getNumberOfGuests = function() {
@@ -54,6 +61,19 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
     this.getFullMenu = function() {
         return selectedDishesFull;
     }
+
+    this.createFullMenu = function() {
+        if(selectedDishes.length == 0 ){
+            return;
+        }
+        selectedDishes.forEach(dishId =>{
+            this.Dish.get({id:dishId},function(dish){
+                selectedDishesFull.push(dish);
+            },function(error){
+                console.log(error);
+            })
+        })
+    }
     this.getAllIngredients = function() {
         var ingredientsList = [];
         selectedDishesFull.forEach(dish => {
@@ -75,15 +95,14 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
     }
 
     this.addDishToMenu = function(id) {
-        console.log("Enter addDishToMenu")
         var index = selectedDishes.indexOf(parseInt(id, 10));
         if (index != -1) {
             return 0;
         }
         this.Dish.get({id:id},function(data){
-        console.log("Enter Sucsses")
+            $cookieStore.remove("dishIds",selectedDishes);
             selectedDishes.push(id);
-            console.log(data);
+            $cookieStore.put("dishIds",selectedDishes);
             selectedDishesFull.push(data);
             //return data;
         },function(data){
@@ -99,7 +118,9 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         var fullIndex = selectedDishesFull.map(function(element) {
             return element.id;
         }).indexOf(id);
+        $cookieStore.remove("dishIds");
         selectedDishes.splice(index, 1);
+        $cookieStore.put("dishIds",selectedDishes);
         selectedDishesFull.splice(fullIndex, 1);
         return;
     }
@@ -124,6 +145,15 @@ dinnerPlannerApp.factory('Dinner', function($resource) {
         var sum = this.oneDishCost(dish);
         return sum * numberOfGuest;
     }
+
+    var numberOfGuest = $cookieStore.get("guests");
+    console.log(numberOfGuest); //should be 0 later
+    var selectedDishes = $cookieStore.get("dishIds");
+    console.log(selectedDishes);
+    var selectedDishesFull = []
+        console.log(selectedDishesFull);
+    this.createFullMenu();
+        console.log(selectedDishesFull);
 
         // Angular service needs to return an object that has all the
         // methods created in it. You can consider that this is instead
